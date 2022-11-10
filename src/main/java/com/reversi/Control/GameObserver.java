@@ -73,15 +73,14 @@ public class GameObserver {
     public void listenForSelection(MouseEvent event) {
         if (Rules.GameIsRunning){
             Object source = event.getSource();
-            if (source instanceof ImageView clickedImageView) {
-                if (clickedImageView != selectedGrid){
-                    selectedGrid = clickedImageView;
-                    try{
-                        selectedGrid.setImage(Rules.playDisk(selectedGrid));
-                        endTurn();
-                    } catch (IOException e){
-                        e.printStackTrace();
-                    }
+            if (source instanceof ImageView clickedImageView &&
+                    clickedImageView != selectedGrid) {
+                selectedGrid = clickedImageView;
+                try{
+                    selectedGrid.setImage(Rules.playDisk(selectedGrid));
+                    endTurn();
+                } catch (IOException e){
+                    e.printStackTrace();
                 }
             }
         } else {

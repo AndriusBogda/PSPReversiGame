@@ -41,12 +41,10 @@ public class Table {
              Matrix) {
             for (var disk:
                     array) {
-                if ( disk == null){
-                    continue;
-                } else {
-                    if (disk.X.compareTo(x) == 0 && disk.Y.compareTo(y) == 0){
-                        return disk;
-                    }
+                if ( disk != null &&
+                        disk.X.compareTo(x) == 0 &&
+                        disk.Y.compareTo(y) == 0){
+                    return disk;
                 }
             }
         }
@@ -114,10 +112,10 @@ public class Table {
              Matrix) {
             for (var disk:
                     diskArray) {
-                if (disk != null){
-                    if (disk.X.compareTo(x) == 0 && disk.Y.compareTo(y) == 0){
-                        return true;
-                    }
+                if (disk != null &&
+                        disk.X.compareTo(x) == 0 &&
+                        disk.Y.compareTo(y) == 0){
+                    return true;
                 }
             }
         }
