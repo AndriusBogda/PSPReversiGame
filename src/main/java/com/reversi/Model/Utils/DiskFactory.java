@@ -3,7 +3,7 @@ package com.reversi.Model.Utils;
 import com.reversi.Main;
 import javafx.scene.image.Image;
 
-public class DiskConfigurations {
+public class DiskFactory {
     public static Image getWhiteDisk(){
         return new Image(Main.class.getResource("Utils/White.jpg").getPath().substring(1));
     }

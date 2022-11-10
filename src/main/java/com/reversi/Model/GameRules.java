@@ -2,7 +2,7 @@ package com.reversi.Model;
 
 import com.reversi.Model.PlayableObjects.Disk;
 import com.reversi.Model.PlayableObjects.Table;
-import com.reversi.Model.Utils.DiskConfigurations;
+import com.reversi.Model.Utils.DiskFactory;
 import com.reversi.Model.Utils.Color;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -95,7 +95,7 @@ public class GameRules {
                     GameIsRunning = false;
                 }
                 turnAllToColor(Color.White, table.getAllDisksFromTo(fromPlayedDisk, new Disk(img.getX(), img.getY(), Color.Black)));
-                return DiskConfigurations.getWhiteDisk();
+                return DiskFactory.getWhiteDisk();
             }
         } else {
             if(isPlayable(img)) {
@@ -104,7 +104,7 @@ public class GameRules {
                     GameIsRunning = false;
                 }
                 turnAllToColor(Color.Black, table.getAllDisksFromTo(fromPlayedDisk, new Disk(img.getX(), img.getY(), Color.Black)));
-                return DiskConfigurations.getBlackDisk();
+                return DiskFactory.getBlackDisk();
             }
         }
 
